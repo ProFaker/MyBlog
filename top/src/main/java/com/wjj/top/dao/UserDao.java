@@ -22,7 +22,7 @@ public interface UserDao {
     @Select({"select ",SELECT_FILEDS," from ",TABLE_NAME, " where name= #{name}"})
     User selectByUserName(String name);
 
-    @Select({"select ",SELECT_FILEDS," from ",TABLE_NAME, " where name= #{userId}"})
+    @Select({"select ",SELECT_FILEDS," from ",TABLE_NAME, " where id= #{userId}"})
     User selectById(@Param("userId") int userId);
 
 }

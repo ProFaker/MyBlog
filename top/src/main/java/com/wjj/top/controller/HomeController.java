@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -63,7 +64,7 @@ public class HomeController {
                response.addCookie(cookie);
                eventProducer.fireEvent(new EventModel(EventType.LOGIN).setActorId(1)
                .setEntityId(2));
-               return TopUtils.getJsonString(0,"登录成功");
+               return TopUtils.getJsonString(0,map.get("ticket").toString());
           }else{
                return TopUtils.getJsonString(1,map);
           }

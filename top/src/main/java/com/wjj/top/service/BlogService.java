@@ -13,11 +13,15 @@ public class BlogService {
     @Autowired
     BlogDao blogDao;
 
-    public int addBlog(Blog blog){
+    public int addBlog(Blog blog) {
         return blogDao.addBlog(blog);
     }
 
-    public List<Blog> selectByGroupIdAndOffset(int groupId , int offset ,int limit){
-        return blogDao.selectByGroupIdAndOffset(groupId,offset,limit);
+    public List<Blog> selectByGroupIdAndOffset(int groupId, int offset, int limit) {
+        return blogDao.selectByGroupIdAndOffset(groupId, offset, limit);
+    }
+
+    public Blog selectById(int id){
+        return blogDao.selectById(id);
     }
 }

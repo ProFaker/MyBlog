@@ -1,6 +1,9 @@
 package com.wjj.top.controller;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.wjj.top.entity.Classify;
+import com.wjj.top.entity.HostHolder;
+import com.wjj.top.entity.User;
 import com.wjj.top.service.ClassifyService;
 import com.wjj.top.utils.TopUtils;
 import org.slf4j.Logger;
@@ -18,11 +21,14 @@ public class ClassifyController {
     private static Logger logger = LoggerFactory.getLogger(ClassifyController.class);
 
     @Autowired
+    HostHolder hostHolder;
+
+    @Autowired
     ClassifyService classifyService;
 
     @RequestMapping("/getClassifyByUserId")
-    public List<Classify> getClassifyByUserId(@RequestParam("userId") int UserId){
-
+    public List<Classify> getClassifyByUserId(){
+        int UserId = hostHolder.getUser().getId();
         try {
             List<Classify> classifies= classifyService.getClassifyByUserId(UserId);
             return classifies;
@@ -34,8 +40,8 @@ public class ClassifyController {
     }
     @RequestMapping("/addClassify")
     public String addClassify(@RequestParam("parentId") int parentId,
-                              @RequestParam("displayName") String displayName,
-                              @RequestParam("userId") int userId){
+                              @RequestParam("displayName") String displayName){
+        int userId = hostHolder.getUser().getId();
         Classify classify = new Classify(parentId,displayName,userId);
         try {
             int result = classifyService.addClassify(classify);

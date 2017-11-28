@@ -1,8 +1,10 @@
 package com.wjj.top.controller;
 
 import com.wjj.top.entity.Blog;
+import com.wjj.top.entity.HostHolder;
 import com.wjj.top.service.BlogService;
 import com.wjj.top.utils.TopUtils;
+import org.apache.catalina.Host;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class BlogController {
     private static Logger logger = LoggerFactory.getLogger(BlogController.class);
 
     @Autowired
+    HostHolder hostHolder;
+
+    @Autowired
     BlogService blogService;
 
     @RequestMapping(value = "/addBlog")
@@ -26,9 +31,8 @@ public class BlogController {
                           @RequestParam("blogContent") String blogContent,
                           @RequestParam("blogSummary") String blogSummary,
                           @RequestParam("blogTag") String blogTag,
-                          @RequestParam("blogTag") String blogType,
-                          @RequestParam("userId") int userId){
-
+                          @RequestParam("blogTag") String blogType){
+        int userId = hostHolder.getUser().getId();
         Blog blog = new Blog(groupId,blogTitle,blogContent,blogSummary ,blogType,blogTag,userId);
 
         try{
@@ -54,6 +58,21 @@ public class BlogController {
 
         }catch (Exception e){
             logger.error("查询失败："+e.getMessage());
+            return  null;
+        }
+    }
+
+    @RequestMapping(value = "/getBlogById")
+    public Blog getBlogById(@RequestParam("id") int id){
+        try {
+            Blog blog = blogService.selectById(id);
+            if(blog == null){
+                logger.error("id错误");
+                return null;
+            }
+            return blog;
+        }catch (Exception e){
+            logger.error("查询错误"+e.getMessage());
             return  null;
         }
     }

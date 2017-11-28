@@ -30,24 +30,26 @@ public class PassportInterceptor implements HandlerInterceptor
     //请求前触发
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Headers"," Origin, X-Requested-With, Content-Type, Accept");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:8003");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Headers"," Origin, No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With");
         response.setHeader("Access-Control-Allow-Methods"," GET, POST, PUT,DELETE");
         String ticket=null;
         if(request.getCookies() != null){
             for(Cookie cookie : request.getCookies()){{
-                if(cookie.getName().equals("cookie")){
-                    ticket=cookie.getValue();
-                    break;
-                }
+                    if(cookie.getName().equals("ticket")){
+                        ticket=cookie.getValue();
+                        break;
+                    }
             }}
         }
 
         if(ticket != null){
             LoginTicket loginTicket=loginTicketDao.selectByTicket(ticket);
-            if(loginTicket == null || loginTicket.getExpired().before(new Date())){
+            if(loginTicket == null || loginTicket.getStatus() == 1){
                 return  true;
             }
+
 
             User user = userDao.selectById(loginTicketDao.getUserIdByTicket(ticket));
             hostHolder.setUser(user);
