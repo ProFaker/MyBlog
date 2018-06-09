@@ -1,0 +1,9 @@
+#索引存储目录
+
+spring:
+    profiles: test
+csearch.indexStorePath=src/main/resources/indexstore
+#高亮标签
+csearch.highlighter.opening=<em>
+csearch.highlighter.closing=</em>
+csearch.fragmentSize=150

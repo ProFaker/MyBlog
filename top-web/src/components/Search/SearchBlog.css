@@ -1,0 +1,13 @@
+.content{
+    cursor: pointer;
+    max-height: 60px;
+    margin: 3px 10px 10px 10px;
+    
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    /* -webkit-line-: 1; */
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp :3;
+}   

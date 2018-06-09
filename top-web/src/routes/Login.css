@@ -1,0 +1,42 @@
+.anticon-close-circle {
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+    font-size: 12px;
+  }
+  .anticon-close-circle:hover {
+    color: #999;
+  }
+  .anticon-close-circle:active {
+    color: #666;
+  }
+
+  .login{
+    position: relative;
+    border: 3px solid rgb(238, 235, 235);
+    width: 800px;
+    height: 400px;
+    position:absolute;/**绝对定位**/
+    top:50%;            
+    left:50%; 
+    margin:-200px 0 0 -400px;
+    padding: 100px 150px ;
+
+}
+
+.canel{
+  position: absolute;
+  top: 260px;
+  left: 260px;
+}
+
+.submit{
+  position: absolute;
+  top: 260px;
+  right: 260px;
+}
+
+.normal{
+  height: 100%;
+  widows: 100%;
+}

@@ -1,0 +1,22 @@
+2017-12-01 21:30:11.239  INFO 7360 --- [restartedMain] com.wjj.top.TopApplication               : Starting TopApplication on haopenghui with PID 7360 (C:\Users\liantieyu\Desktop\SpringBoot\top\target\classes started by admin in C:\Users\liantieyu\Desktop\SpringBoot\top)
+2017-12-01 21:30:11.239  INFO 7360 --- [restartedMain] com.wjj.top.TopApplication               : No active profile set, falling back to default profiles: default
+2017-12-01 21:30:12.819  INFO 7360 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-01 21:30:12.819  INFO 7360 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-01 21:30:12.897  INFO 7360 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-01 21:30:13.764  WARN 7360 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-12-01 21:30:14.204  INFO 7360 --- [restartedMain] com.wjj.top.TopApplication               : Started TopApplication in 3.22 seconds (JVM running for 3.791)
+2017-12-01 21:31:26.692  INFO 7360 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-12-01 21:31:32.816 ERROR 7360 --- [http-nio-8080-exec-8] com.wjj.top.controller.BlogController    : 查询错误
+2017-12-01 21:32:06.195  INFO 1720 --- [restartedMain] com.wjj.top.TopApplication               : Starting TopApplication on haopenghui with PID 1720 (C:\Users\liantieyu\Desktop\SpringBoot\top\target\classes started by admin in C:\Users\liantieyu\Desktop\SpringBoot\top)
+2017-12-01 21:32:06.195  INFO 1720 --- [restartedMain] com.wjj.top.TopApplication               : No active profile set, falling back to default profiles: default
+2017-12-01 21:32:07.725  INFO 1720 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-01 21:32:07.725  INFO 1720 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-01 21:32:07.803  INFO 1720 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-01 21:32:08.657  WARN 1720 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-12-01 21:32:09.107  INFO 1720 --- [restartedMain] com.wjj.top.TopApplication               : Started TopApplication in 3.138 seconds (JVM running for 3.687)
+2017-12-01 21:32:21.713  INFO 9780 --- [restartedMain] com.wjj.top.TopApplication               : Starting TopApplication on haopenghui with PID 9780 (C:\Users\liantieyu\Desktop\SpringBoot\top\target\classes started by admin in C:\Users\liantieyu\Desktop\SpringBoot\top)
+2017-12-01 21:32:21.713  INFO 9780 --- [restartedMain] com.wjj.top.TopApplication               : No active profile set, falling back to default profiles: default
+2017-12-01 21:32:23.688  INFO 9780 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-01 21:32:23.688  INFO 9780 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-01 21:32:23.751  INFO 9780 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-01 21:33:45.384  WARN 9780 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
